@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   min-height: 100vh;
+   display: grid;
+   place-content: center;
+   font-family: 'Comfortaa', cursive;
+   gap: 2rem;
+
+   background: #e0e0e0;
+   color: rgb(50, 50, 50);
+}
+
+h1 {
+   display: flex;
+   justify-content: center;
+   font-size: 5em;
+   color: rgb(51, 51, 51);
+   margin-bottom: 1em;
+}
+.dominos-container {
+   display: flex;
+   gap: 2em;
+   align-items: center;
+   font-size: 1vw;
+}
+.colon,
+.ampm {
+   font-size: 5em;
+}
+.domino {
+   width: 12em;
+   /* background: linear-gradient(to bottom right, rgb(200, 200, 200), rgb(216, 216, 216));
+   box-shadow: inset 0.1em 0.1em 0.2em rgba(255, 255, 255, 0.2),
+      inset -0.1em -0.1em 0.2em rgba(0, 0, 0, 0.9), 0.1em 0.1em 2em rgba(0, 0, 0, 1); */
+   display: grid;
+   border-radius: 1em;
+   gap: 2em;
+   padding: 2em;
+
+   background: #e0e0e0;
+   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+.domino::before {
+   content: '';
+   height: 0.25em;
+   background: rgba(51, 51, 51, 0.5);
+   grid-row: 2;
+   border-radius: 0.25em;
+}
+.domino .part {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1em;
+}
+
+.part span {
+   aspect-ratio: 1/1;
+   width: 100%;
+   border-radius: 50%;
+   background-image: linear-gradient(transparent 50%, rgb(51, 51, 51) 50%);
+   background-size: 100% 220%;
+   background-position: 0 0%;
+   transition: background-position 0.25s ease-in-out;
+}
+
+.part span.active {
+   background-position: 0 -90%;
+}
